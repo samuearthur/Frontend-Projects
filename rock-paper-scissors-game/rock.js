@@ -92,7 +92,7 @@ function renderGame() {
     var uChoiceTxt = document.createElement("p");
     var sChoiceTxt = document.createElement("p");
     uChoiceTxt.textContent = `You played ${choice}`;
-    sChoiceTxt.textContent = `Mofe played ${options[systemPick]}`;
+    sChoiceTxt.textContent = `Elkanah played ${options[systemPick]}`;
     if (up.hasChildNodes()) {
         up.replaceChildren(uChoiceTxt) //Replace appended paragraphs from previous game rounds
     } else up.appendChild(uChoiceTxt); //for first round
