@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Play now | You Rock</title>
+    <meta name="author" content="Samuel Arthur">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="paper.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <div>
+        <p>ROCK</p>
+        <p>PAPER</p>
+        <p>SCISSORS</p>
+      </div>
+      <p id="round"></p>
+      <div class="score-card">
+        <p>SCORE</p>
+        <p class="score-value">
+          <span id="userScore"></span> -
+          <span id="systemScore"></span>
+        </p>
+      </div>
+    </header>
+
+    <div class="game-area">
+      <div id='form'>
+        <input type="text" placeholder="What's your name?" id="name-input">
+        <button id="start-btn">Play Game</button>
+      </div>
+      <div class="face-off">
+        <div class="user-pick">
+          <p id="up"></p>
+        </div>
+        <div class="system-pick">
+          <p id="sp"></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- MESSAGE BOX -->
+    <div class="message">
+      <h1 id="m-text">YOU WIN</h1>
+      <a href="index.html"><button id="restart">PLAY AGAIN</button></a>
+    </div>
+
+    <div class="container" role="main">
+      <img class="tri-image" src="images/bg-triangle.svg" alt="">
+      <div class="paper-icon" onclick="renderGame(this)" name="Paper">
+        <img src="images/icon-paper.svg" alt="" name="Paper">
+      </div>
+      <div class="scissors-icon" onclick="renderGame(this)" name="Scissors">
+        <img src="images/icon-scissors.svg" alt="" name="Scissors">
+      </div>
+      <div class="rock-icon" onclick="renderGame(this)" name="Rock">
+        <img src="images/icon-rock.svg" alt="" name="Rock">
+      </div>
+    </div>
+    <button class="rules-btn" data-toggle="modal" data-target="#ruleModal">RULES</button>
+
+    <!-- RULES MODAL -->
+    <div class="modal">
+      <div class="modal-head">
+        <p>RULES</p>
+        <img class="close-icon" src="images/icon-close.svg" alt="">
+      </div>
+      <div class="rules">
+        <img class="rules-img" src="images/image-rules.svg" alt="">
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH/">FrontEnd Mentor Challenge</a> Coded by <a href="https://github.com/samuearthur"> Samuel Arthur</a>
+  </footer>
+    <script src="rock.js" async defer></script>
+  </body>
+</html>

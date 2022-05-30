@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+:root {
+    --bold: 600;
+    --bolder: 700;
+    --text-dark: hsl(229, 25%, 31%);
+    --text-score: hsl(229, 64%, 46%);
+    --header-outline: hsl(217, 16%, 45%);
+    --text-white: #fff;
+    --body-fs: 16px;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1366px;
+    color: var(--text-white);
+    font-size: var(--body-fs);
+    font-family: 'Barlow Semi Condensed';
+    font-weight: var(--bold);
+    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    outline: 2px solid var(--header-outline);
+    border-radius: 1em;
+    padding: 0.7em;
+    width: 20em;
+    height: auto;
+    margin-top: 1.5em;
+}
+
+header .logo {
+    transform: scale(0.3);
+}
+
+#round {
+    align-self: center;
+}
+
+.score-card {
+    background-color: #fff;
+    border-radius: 0.7em;
+    width: 4em;
+    padding: 0.2em;
+    text-align: center;
+}
+
+.score-card p {
+    color: var(--text-score);
+}
+
+.score-value {
+    color: var(--header-outline) !important;
+    font-size: 24px;
+}
+
+.game-area {
+    margin-top: 2em;
+    overflow: visible;
+}
+
+#name-input {
+    padding: 0.5em 1em;
+    outline: 2px solid hsl(230, 89%, 65%);
+    border-radius: 0.5em;
+    border: none;
+    font-family: inherit !important;
+    letter-spacing: 1.5px;
+}
+
+#start-btn {
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: hsl(230, 89%, 62%);
+    font-family: inherit !important;
+    letter-spacing: 1.5px;
+    transform: scale(1);
+    transition: all 0.2s ease-in;
+}
+
+#start-btn:hover {
+    box-shadow: 1px 1px 1px hsl(230, 89%, 65%);
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+}
+
+.rules-btn {
+    position: absolute;
+    right: 4em;
+    bottom: 2em;
+    border: 2px solid var(--header-outline);
+    background-color: inherit;
+    padding: 0.4em;
+    border-radius: 0.5em;
+    color: inherit;
+    cursor: pointer;
+}
+
+.tri-image {
+    position: relative;
+    top: 0em;
+    left: 1em;
+    z-index: 1;
+    margin-top: 4em;
+    margin-right: 1.5em;
+    transform: scale(0.7);
+}
+
+.paper-icon {
+    position: absolute;
+    top: 5em;
+    left: 17em;
+    z-index: 2;
+    width: 4em;
+    height: 4em;
+    padding: 1em;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1em solid hsl(230, 89%, 62%);
+    box-shadow: 4px 8px 8px hsl(230, 89%, 65%) inset;
+    transform: scale(1);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.scissors-icon {
+    position: absolute;
+    top: 5em;
+    right: 16.5em;
+    z-index: 2;
+    width: 4em;
+    height: 4em;
+    padding: 1em;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1em solid hsl(39, 89%, 49%);
+    box-shadow: 4px 8px 8px hsl(40, 84%, 53%) inset;
+    transform: scale(1);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+
+/* .rock-case {
+
+} */
+
+.rock-icon {
+    position: absolute;
+    top: 16em;
+    right: 22.8em;
+    z-index: 2;
+    width: 4em;
+    height: 4em;
+    padding: 1em;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1em solid hsl(349, 71%, 52%);
+    box-shadow: 4px 8px 8px hsl(349, 70%, 56%) inset;
+    transform: scale(1);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+:is(.paper-icon,
+.rock-icon,
+.scissors-icon):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.face-off {
+    display: none;
+    overflow: visible;
+    margin-left: 1em;
+}
+
+.face-off.show {
+    display: flex;
+}
+
+.face-off span {
+    margin-left: 0.5em;
+}
+
+.user-pick {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    width: 150px;
+    height: 150px;
+}
+
+.system-pick {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: visible;
+}
+
+#up p,
+#sp p {
+    margin-left: -1px;
+    opacity: 1;
+    animation: grow 0.8s ease;
+    transform: scale(0.7);
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(0.7);
+    }
+}
+
+#uCreatedIcon {
+    transform: scale(0.7);
+    top: 25%;
+    left: 25%;
+    animation: shrink 0.7s ease;
+}
+
+#sCreatedIcon {
+    transform: scale(0.7);
+    top: 25%;
+    left: 25%;
+    animation: shrink 0.7s ease;
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.7);
+    }
+}
+
+#uCreatedIcon[data*='win'],
+#uCreatedIcon[data*='win'] {
+    padding: 2em !important;
+}
+
+.modal {
+    position: absolute;
+    z-index: 10;
+    top: 20%;
+    display: none;
+    background-color: #fff;
+    border-radius: 0.5em;
+    width: 24em;
+    min-height: 24em;
+    color: var(--header-outline);
+}
+
+.modal.show {
+    display: block;
+    transition: all 0.5s ease-out;
+}
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+    padding: 0 1em;
+}
+
+.modal p {
+    font-size: 1.5rem;
+    font-weight: var(--bolder);
+}
+
+.close-icon {
+    transform: scale(0.7);
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    filter: invert(0.2);
+    transform: scale(0.5);
+}
+
+.rules {
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    display: none;
+    flex-direction: column;
+    margin-top: 3em;
+}
+
+.message a {
+    text-decoration: none;
+}
+
+.message a:hover {
+    transform: scale(1.07);
+}
+
+#m-text {
+    font-size: 40px;
+    text-align: center;
+}
+
+#restart {
+    cursor: pointer;
+    width: 10em;
+    padding: 0.75em 1em;
+    background-color: #fff;
+    border-radius: 0.5em;
+    border: none;
+    color: var(--header-outline);
+    font-weight: var(--bold);
+    font-size: var(--body-fs);
+    transform: scale(1);
+    transition: transform 0.25s ease;
+}
+
+#restart:hover {
+    color: hsl(214, 47%, 23%);
+    transform: scale(1.07);
+}
+
+footer {
+    text-align: center;
+    margin-top: 4em;
+    color: #551A8B;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+
+/* MEDIA QUERY */
+
+@media (max-width:400px) {
+    body {
+        max-width: 375px;
+        overflow-x: hidden;
+    }
+    .container {
+        width: 350px;
+    }
+    .tri-image {
+        transform: scale(0.5);
+    }
+    .paper-icon {
+        top: 7em;
+        left: 15em;
+        width: 3em;
+        height: 3em;
+        padding: 1em;
+    }
+    .scissors-icon {
+        top: 7em;
+        right: 14.5em;
+        width: 3em;
+        height: 3em;
+        padding: 1em;
+    }
+    .rock-icon {
+        top: 15em;
+        right: 9.3em;
+        width: 3em;
+        height: 3em;
+        padding: 1em;
+    }
+    .container>div>img {
+        transform: scale(0.5);
+    }
+    .rules-btn {
+        right: 43.5%;
+        bottom: 6em;
+    }
+    .modal {
+        top: 18%;
+        width: 20em;
+        min-height: 22em;
+    }
+    .game-area {
+        width: 22em;
+        text-align: center;
+        margin-left: -2em;
+        display: flex;
+        justify-content: space-around;
+    }
+    #form {
+        margin-left: 2.5em;
+    }
+    input {
+        text-align: center;
+        letter-spacing: 4px;
+    }
+    #start-btn {
+        margin-top: 0.5em;
+    }
+    .face-off {
+        margin-left: -0.5em;
+    }
+    .face-off p {
+        text-align: center;
+        align-self: flex-end;
+    }
+    .face-off span {
+        display: block;
+        margin-left: -2px;
+    }
+    #uCreatedIcon,
+    #sCreatedIcon {
+        height: 3em;
+        width: 3em;
+        padding: 2em;
+        margin-left: 0.3em;
+    }
+    footer {
+        position: absolute;
+        bottom: 1em;
+    }
+}
