@@ -15,7 +15,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Design preview for the Notifications page coding challenge](./design/desktop-preview.jpg)
+![Screenshot (8)](https://user-images.githubusercontent.com/87957433/191812874-7a91489a-3a14-4671-bcfc-034eebf3b928.png)
+
 
 ### Links
 
