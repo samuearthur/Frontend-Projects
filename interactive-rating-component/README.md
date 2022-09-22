@@ -16,13 +16,12 @@ Users should be able to:
 - See the "Thank you" card state after submitting a rating
 
 ### Screenshot
-
-![Design preview for the Interactive rating component coding challenge]
+![Screenshot (7)](https://user-images.githubusercontent.com/87957433/191810216-22290dc3-5f28-4d7b-8fb0-ca8ffbeccfce.png)
 
 ### Links
 
-- Solution URL: ""
-- Live Site URL: ""
+- Solution URL: "https://github.com/samuearthur/Frontend-Projects/tree/main/interactive-rating-component"
+- Live Site URL: "https://musical-concha-b250cd.netlify.app/"
 
 ## My process
 
